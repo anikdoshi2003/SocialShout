@@ -21,7 +21,8 @@
                 <div class="d-flex gap-3 my-3">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="gender" id="exampleRadios1"
-                            value="1" <?=isset($_SESSION['formdata']) ? '' : 'checked' ?><?=showFormData('gender') == 1 ? 'checked' : '' ?>> 
+                            value="1" <?=isset($_SESSION['formdata']) ? '' : 'checked' ?>
+                            <?=showFormData('gender') == 1 ? 'checked' : '' ?>> 
                         <label class="form-check-label" for="exampleRadios1">
                             Male
                         </label>
