@@ -82,7 +82,7 @@ $response['status']=true;
         $response['field']='first_name';
     }
     if(isEmailRegistered($form_data['email'])){
-        $response['msg']="Email Address is already reigstered";
+        $response['msg']="Email Id is already reigstered";
         $response['status']=false;
         $response['field']='email';
     }
@@ -148,6 +148,15 @@ function checkUser($login_data){
  return $data;
 }
 
+//for getting userdata by id
+function getUser($user_id){
+    global $db;
+
+ $query = "SELECT * FROM users WHERE id=$user_id";
+ $run = mysqli_query($db,$query);
+ return mysqli_fetch_assoc($run);
+}
+
 //function for creating new user
 function createUser($data){
     global $db;
@@ -163,3 +172,21 @@ function createUser($data){
     $query.="VALUES('$first_name','$last_name','$gender','$email','$username','$password')";
     return mysqli_query($db, $query);
 }
+
+//function for Verifying Email
+function verifyEmail($email){
+    global $db;
+    $query="UPDATE users SET acc_status=1 WHERE email='$email'";
+    return mysqli_query($db,$query);
+
+}
+
+//function for Resetting Password
+function resetPassword($email,$password){
+    global $db; 
+    $password=md5($password);
+    $query="UPDATE users SET password='$password' WHERE email='$email'";
+    return mysqli_query($db,$query);
+
+}
+?>

@@ -4,7 +4,7 @@
             <form action="Assets/php/actions.php?login" method="post">
                 <div class="d-flex justify-content-center">
 
-                    <img class="mb-4" src="Assets/images/SocialShout-logo-1.png" alt="" height="80">
+                    <img class="mb-4" src="Assets/images/SocialShout-logo-3.png" alt="" height="100">
                 </div>
                 <h1 class="h5 mb-3 fw-normal">Please Sign In</h1>
  
@@ -24,10 +24,9 @@
                     <button class="btn btn-primary" type="submit">Sign In</button>
                     <a href="?signup" class="text-decoration-none">Create New Account</a>
 
-
                 </div>
                 <br>
-                <a href="" class="text-decoration-none">Forgot Password ?</a>
+                <a href="?forgotpassword&newfp" class="text-decoration-none">Forgot Password ?</a>
             </form>
         </div>
     </div>
