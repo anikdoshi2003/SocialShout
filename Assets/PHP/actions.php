@@ -87,7 +87,7 @@ if (isset($_GET['forgotpassword'])) {
     } else {
         $_SESSION['forgot_email'] = $_POST['email'];
         $_SESSION['forgot_code']  = $code = rand(111111, 999999);
-        sendCode($_POST['email'], 'Forgot Your Password', $code);
+        sendCode($_POST['email'], 'Forgot Your Password ?', $code);
         header('location:../../?forgotpassword&resended');
     }
     
@@ -104,7 +104,7 @@ if (isset($_GET['verifycode'])) {
     $code = $_SESSION['forgot_code'];
     if ($code==$user_code) {
         $_SESSION['auth_temp'] =true;
-        header('location:../../?');
+        header('location:../../?forgotpassword');
     } else {
     $response['msg'] = "Incorrect Verification Code !";
     if (!$_POST['code']) {
@@ -126,4 +126,20 @@ if(isset($_GET['changepassword'])){
         resetPassword($_SESSION['forgot_email'],$_POST['password']);
     header("location:../../?reseted");
     }
+}
+
+if(isset($_GET['updateprofile'])){
+
+echo "<pre>";
+    $response = validateUpdateForm($_POST,$_FILES['profile_pic']);
+    if ($response['status']) {
+        if(updateProfile($_POST,$_FILES['profile_pic'])){
+            header("location:../../?editprofile&success");
+        }else{
+            echo "Something is Wrong";
+        }
+    } else {
+        $_SESSION['error']    = $response;
+        header("location:../../?editprofile");
+    }   
 }

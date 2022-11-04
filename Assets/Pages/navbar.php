@@ -1,8 +1,9 @@
+<?php global $user;?> 
 
     <nav class="navbar navbar-expand-lg navbar-light bg-white border">
         <div class="container col-10 d-flex justify-content-between">
             <div class="d-flex justify-content-between col-8">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="?">
                     <img src="assets/images/SocialShout-logo-3.png" height="50">
 
                 </a>
@@ -19,7 +20,7 @@
             <ul class="navbar-nav  mb-2 mb-lg-0">
 
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="#"><i class="bi bi-house-door-fill"></i></a>
+                    <a class="nav-link text-dark" href="?"><i class="bi bi-house-door-fill"></i></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-dark" href="#"><i class="bi bi-plus-square-fill"></i></a>
@@ -33,10 +34,10 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="assets/images/profile/profile.jpg" alt="" height="30" class="rounded-circle border">
+                        <img src="assets/images/profile/<?=$user['profile_pic']?>" alt="" height="30" class="rounded-circle border">
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">My Profile</a></li>
+                        <li><a class="dropdown-item" href="?editprofile">Edit Profile</a></li>
                         <li><a class="dropdown-item" href="#">Account Settings</a></li>
                         <li>
                             <hr class="dropdown-divider">

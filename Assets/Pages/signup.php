@@ -18,6 +18,7 @@
                 </div>
                 <?=showError('first_name') ?>
                 <?=showError('last_name') ?>
+                 
                 <div class="d-flex gap-3 my-3">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="gender" id="exampleRadios1"

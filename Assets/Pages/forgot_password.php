@@ -5,12 +5,11 @@ if (isset($_SESSION['forgot_code']) && !isset($_SESSION['auth_temp'])) {
     $action = 'verifycode';
 }elseif (isset($_SESSION['forgot_code']) && isset($_SESSION['auth_temp'])) {
     $action = 'changepassword';
-}
-     else {
+}else {
     $action = 'forgotpassword';
 }
 ?>
-           <form method="post" action="assets/php/actions.php?<?= $action ?>">
+           <form method="post" action="assets/php/actions.php?<?=$action?>">
                 <div class="d-flex justify-content-center">
 
                  </div>
@@ -19,7 +18,7 @@ if (isset($_SESSION['forgot_code']) && !isset($_SESSION['auth_temp'])) {
 if ($action == 'forgotpassword') {
 ?>
    <div class="form-floating">
-                    <input type="email" name="email" class="form-control rounded-0" placeholder="Email">
+                    <input type="email" name="email" class="form-control rounded-0" placeholder="username/email">
                     <label for="floatingInput">Enter Your Email </label>
                 </div>
                 <?= showError('email') ?>
@@ -32,7 +31,7 @@ if ($action == 'forgotpassword') {
 <?php
 if ($action == 'verifycode') {
 ?>
-               <p>Enter the 6 Digit Code Sent to You</p>
+               <p>Enter the 6 Digit Code Sent to You- <?=$_SESSION['forgot_email']?></p>
                 <div class="form-floating mt-1"> 
                     <input type="text" name="code" class="form-control rounded-0" id="floatingPassword" placeholder="Password" maxlength="6">
                     <label for="floatingPassword">######</label> 
@@ -47,12 +46,12 @@ if ($action == 'verifycode') {
 <?php 
 if ($action == 'changepassword') {
 ?>
-<p>Enter Your New Password</p>
+<p>Enter Your New Password- <?=$_SESSION['forgot_email']?></p>
                <div class="form-floating mt-1">
                     <input type="password" name="password" class="form-control rounded-0" id="floatingPassword" placeholder="Password">
                     <label for="floatingPassword">New Password</label>
                 </div>
-                <?= showError('password') ?> 
+                <?= showError('password')?> 
                 <br>
                 <button class="btn btn-primary" type="submit">Change Password</button>
                 <?php
