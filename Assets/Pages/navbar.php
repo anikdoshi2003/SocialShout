@@ -1,6 +1,7 @@
 <?php global $user;?> 
 
     <nav class="navbar navbar-expand-lg navbar-light bg-white border">
+        
         <div class="container col-10 d-flex justify-content-between">
             <div class="d-flex justify-content-between col-8">
                 <a class="navbar-brand" href="?">
@@ -9,7 +10,7 @@
                 </a>
 
                 <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Looking For Someone..."
+                    <input class="form-control me-4" type="search" placeholder="Looking For Someone..."
                         aria-label="Search">
 
                 </form>
@@ -23,7 +24,7 @@
                     <a class="nav-link text-dark" href="?"><i class="bi bi-house-door-fill"></i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="#"><i class="bi bi-plus-square-fill"></i></a>
+                    <a class="nav-link text-dark" data-bs-toggle="modal" data-bs-target="#addpost" href="#"><i class="bi bi-plus-square-fill"></i></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-dark" href="#"><i class="bi bi-bell-fill"></i></a>

@@ -1,156 +1,51 @@
- <?php global $user;?>
+ <?php 
+ global $user;
+ global $posts;
+ 
+ ?>
+
    <div class="container col-9 rounded-0 d-flex justify-content-between">
         <div class="col-8">
-            <div class="card mt-4">
+        <?php
+        showError('post_img');
+foreach($posts as $post){
+        ?>
+        <div class="card mt-4">
                 <div class="card-title d-flex justify-content-between  align-items-center">
 
                     <div class="d-flex align-items-center p-2">
-                        <img src="assets/images/profile/profile.jpg" alt="" height="30" class="rounded-circle border">&nbsp;&nbsp;Monu
-                        Giri
+                        <img src="assets/images/profile/<?=$post['profile_pic']?>" alt="" height="30" class="rounded-circle border">&nbsp;&nbsp;<?=$post['first_name']?> <?=$post['last_name']?>
                     </div>   
                     <div class="p-2">
                         <i class="bi bi-three-dots-vertical"></i>
                     </div>
                 </div>
-                <img src="assets/images/posts/post2.jpg" class="" alt="...">
+                <img src="assets/images/posts/<?=$post['post_img']?>" class="" alt="...">
                 <h4 style="font-size: x-larger" class="p-2 border-bottom"><i class="bi bi-heart"></i>&nbsp;&nbsp;<i
                         class="bi bi-chat-left"></i>
                 </h4>
+                <?php
+if($post['post_text']){
+    ?>
                 <div class="card-body">
-                    This is a wider card with supporting text below as a
-                    natural lead-in to
-                    additional content. This content is a little bit longer.
-
+                <?=$post['post_text']?>
                 </div>
+    <?php
+}
+                ?>
 
-                <div class="input-group p-2 border-top">
+                <div class="input-group p-2 <?=$post['post_text']?'border-top':''?>">
                     <input type="text" class="form-control rounded-0 border-0" placeholder="say something.."
                         aria-label="Recipient's username" aria-describedby="button-addon2">
                     <button class="btn btn-outline-primary rounded-0 border-0" type="button"
                         id="button-addon2">Post</button>
                 </div>
 
-            </div>
-            <div class="card mt-4">
-                <div class="card-title d-flex justify-content-between  align-items-center">
+            </div> 
 
-                    <div class="d-flex align-items-center p-2">
-                        <img src="assets/images/profile/profile.jpg" alt="" height="30" class="rounded-circle border">&nbsp;&nbsp;Monu
-                        Giri
-                    </div>
-                    <div class="p-2">
-                        <i class="bi bi-three-dots-vertical"></i>
-                    </div>
-                </div>
-                <img src="assets/images/posts/post3.png" class="" alt="...">
-                <h4 style="font-size: x-larger" class="p-2 border-bottom"><i class="bi bi-heart"></i>&nbsp;&nbsp;<i
-                        class="bi bi-chat-left"></i>
-                </h4>
-                <div class="card-body">
-                    This is a wider card with supporting text below as a
-                    natural lead-in to
-                    additional content. This content is a little bit longer.
-
-                </div>
-
-                <div class="input-group p-2 border-top">
-                    <input type="text" class="form-control rounded-0 border-0" placeholder="say something.."
-                        aria-label="Recipient's username" aria-describedby="button-addon2">
-                    <button class="btn btn-outline-primary rounded-0 border-0" type="button"
-                        id="button-addon2">Post</button>
-                </div>
-
-            </div>
-            <div class="card mt-4">
-                <div class="card-title d-flex justify-content-between  align-items-center">
-
-                    <div class="d-flex align-items-center p-2">
-                        <img src="assets/images/profile/profile.jpg" alt="" height="30" class="rounded-circle border">&nbsp;&nbsp;Monu
-                        Giri
-                    </div>
-                    <div class="p-2">
-                        <i class="bi bi-three-dots-vertical"></i>
-                    </div>
-                </div>
-                <img src="assets/images/posts/post4.jpg" class="" alt="...">
-                <h4 style="font-size: x-larger" class="p-2 border-bottom"><i class="bi bi-heart"></i>&nbsp;&nbsp;<i
-                        class="bi bi-chat-left"></i>
-                </h4>
-                <div class="card-body">
-                    This is a wider card with supporting text below as a
-                    natural lead-in to
-                    additional content. This content is a little bit longer.
-
-                </div>
-
-                <div class="input-group p-2 border-top">
-                    <input type="text" class="form-control rounded-0 border-0" placeholder="say something.."
-                        aria-label="Recipient's username" aria-describedby="button-addon2">
-                    <button class="btn btn-outline-primary rounded-0 border-0" type="button"
-                        id="button-addon2">Post</button>
-                </div>
-
-            </div>
-            <div class="card mt-4">
-                <div class="card-title d-flex justify-content-between  align-items-center">
-
-                    <div class="d-flex align-items-center p-2">
-                        <img src="assets/images/profile/profile.jpg" alt="" height="30" class="rounded-circle border">&nbsp;&nbsp;Monu
-                        Giri
-                    </div>
-                    <div class="p-2">
-                        <i class="bi bi-three-dots-vertical"></i>
-                    </div>
-                </div>
-                <img src="assets/images/posts/post.jpg" class="" alt="...">
-                <h4 style="font-size: x-larger" class="p-2 border-bottom"><i class="bi bi-heart"></i>&nbsp;&nbsp;<i
-                        class="bi bi-chat-left"></i>
-                </h4>
-                <div class="card-body">
-                    This is a wider card with supporting text below as a
-                    natural lead-in to
-                    additional content. This content is a little bit longer.
-
-                </div>
-
-                <div class="input-group p-2 border-top">
-                    <input type="text" class="form-control rounded-0 border-0" placeholder="say something.."
-                        aria-label="Recipient's username" aria-describedby="button-addon2">
-                    <button class="btn btn-outline-primary rounded-0 border-0" type="button"
-                        id="button-addon2">Post</button>
-                </div>
-
-            </div>
-            <div class="card mt-4">
-                <div class="card-title d-flex justify-content-between  align-items-center">
-
-                    <div class="d-flex align-items-center p-2">
-                        <img src="assets/images/profile/profile.jpg" alt="" height="30" class="rounded-circle border">&nbsp;&nbsp;Monu
-                        Giri
-                    </div>
-                    <div class="p-2">
-                        <i class="bi bi-three-dots-vertical"></i>
-                    </div>
-                </div>
-                <img src="assets/images/posts/post5.jpg" class="" alt="...">
-                <h4 style="font-size: x-larger" class="p-2 border-bottom"><i class="bi bi-heart"></i>&nbsp;&nbsp;<i
-                        class="bi bi-chat-left"></i>
-                </h4>
-                <div class="card-body">
-                    This is a wider card with supporting text below as a
-                    natural lead-in to
-                    additional content. This content is a little bit longer.
-
-                </div>
-
-                <div class="input-group p-2 border-top">
-                    <input type="text" class="form-control rounded-0 border-0" placeholder="say something.."
-                        aria-label="Recipient's username" aria-describedby="button-addon2">
-                    <button class="btn btn-outline-primary rounded-0 border-0" type="button"
-                        id="button-addon2">Post</button>
-                </div>
-
-            </div>
+        <?php
+}    
+        ?>
 
         </div>
 

@@ -14,7 +14,6 @@ if (isset($_GET['signup'])) {
             echo "<script>alert('Something is wrong')</script>";
         }
         
-        
     } else {
         $_SESSION['error']    = $response;
         $_SESSION['formdata'] = $_POST;
@@ -33,11 +32,8 @@ if (isset($_GET['login'])) {
         if ($response['user']['acc_status'] == 0) {
             $_SESSION['code'] = $code = rand(111111, 999999);
             sendCode($response['user']['email'], 'Verify Your Email', $code);
-            
         }
-        
         header("location:../../");
-        
     } else {
         $_SESSION['error']  = $response;
         $_SESSION['formdata'] = $_POST;
@@ -91,11 +87,11 @@ if (isset($_GET['forgotpassword'])) {
         header('location:../../?forgotpassword&resended');
     }
     
+}
     //for User Logout
-    if (isset($_GET['logout'])) {
-        session_destroy();
-        header('location:../../');
-    }
+if (isset($_GET['logout'])){
+    session_destroy();
+    header('location:../../');
 }
 
 //for verifying forgot code
@@ -139,7 +135,25 @@ echo "<pre>";
             echo "Something is Wrong";
         }
     } else {
-        $_SESSION['error']    = $response;
+        $_SESSION['error']  = $response;
         header("location:../../?editprofile");
     }   
+}
+
+//For Managing Add Post
+if(isset($_GET['addpost'])){
+    $response = validatePostImage($_FILES['post_img']);
+
+    if($response['status']){
+        if(createPost($_POST,$_FILES['post_img'])){
+            header("location:../../?new_post_added");
+        }else{
+            echo "Something Went Wrong";
+        }
+    }else{
+        $_SESSION['error']  = $response;
+        header("location:../../");
+    }
+
+
 }

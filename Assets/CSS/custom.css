@@ -1,6 +1,7 @@
 body{
     background-color: #F5F9F9;
     /* background-size: cover; */
+    
 }
 
 .login{
@@ -10,5 +11,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 
-
 }
+
+
+   
