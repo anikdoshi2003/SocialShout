@@ -11,8 +11,19 @@ function showPage($page,$data=""){
 function followUser($user_id){
     global $db;
     $current_user=$_SESSION['userdata']['id'];
-$query="INSERT INTO follow_list(follower_id,user_id) VALUES($current_user,$user_id)";
-return mysqli_query($db,$query);
+    $query="INSERT INTO follow_list(follower_id,user_id) VALUES($current_user,$user_id)";
+    return mysqli_query($db,$query);
+}
+
+//function for unfollwoing the user
+function unfollowUser($user_id){
+    global $db;
+    $current_user=$_SESSION['userdata']['id'];
+    $query="DELETE FROM follow_list WHERE follower_id=$current_user && user_id=$user_id";
+
+    return mysqli_query($db,$query);
+ 
+    
 }
 
 //function for showing errors
@@ -161,7 +172,6 @@ function checkUser($login_data){
      $data['status']=true;
  }else{
     $data['status']=false;
-
  }
 
  return $data;
@@ -206,7 +216,24 @@ $run = mysqli_query($db,$query);
 return mysqli_fetch_all($run,true);
 }
 
-//for getting Posts by id
+//function to get followers count
+function getFollowers($user_id){
+global $db;
+$query="SELECT * FROM follow_list WHERE user_id=$user_id";
+$run = mysqli_query($db,$query);
+return mysqli_fetch_all($run,true);
+}
+
+//function to get following count
+function getFollowing($user_id){
+global $db;
+$query="SELECT * FROM follow_list WHERE follower_id=$user_id";
+$run = mysqli_query($db,$query);
+return mysqli_fetch_all($run,true);
+}
+
+
+//function for getting Posts by id
 function getPostById($user_id){
     global $db;
      $query ="SELECT * FROM posts WHERE user_id=$user_id ORDER By id DESC";

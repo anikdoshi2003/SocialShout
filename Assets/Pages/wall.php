@@ -17,7 +17,7 @@ foreach($posts as $post){
                 <div class="card-title d-flex justify-content-between  align-items-center">
 
                     <div class="d-flex align-items-center p-2">
-                        <img src="assets/images/profile/<?=$post['profile_pic']?>" alt="" height="30" class="rounded-circle border">&nbsp;&nbsp;<?=$post['first_name']?> <?=$post['last_name']?>
+                        <img src="assets/images/profile/<?=$post['profile_pic']?>" alt="" height="30" class="rounded-circle border">&nbsp;&nbsp;<a href='?u=<?=$post['username']?>' class="text-decoration-none text-dark"><?=$post['first_name']?> <?=$post['last_name']?></a>
                     </div>   
                     <div class="p-2">
                         <i class="bi bi-three-dots-vertical"></i>
@@ -58,7 +58,7 @@ if($post['post_text']){
                 </div>
                 <div>&nbsp;&nbsp;&nbsp;</div>
                 <div class="d-flex flex-column justify-content-center align-items-center">
-                    <h6 style="margin: 0px;"><?=$user['first_name']?> <?=$user['last_name']?></h6>
+                <a href='?u=<?=$user['username']?>' class="text-decoration-none text-dark"><h6 style="margin: 0px;"><?=$user['first_name']?> <?=$user['last_name']?></h6></a>
                     <p style="margin:0px;" class="text-muted">@<?=$user['username']?></p>
                 </div>
             </div>
@@ -73,7 +73,7 @@ foreach($follow_sugggestions as $suser){
                         </div>
                         <div>&nbsp;&nbsp;</div>
                         <div class="d-flex flex-column justify-content-center">
-                            <h6 style="margin: 0px;font-size: small;"><?=$suser['first_name']?> <?=$suser['last_name']?></h6>
+                            <a href='?u=<?=$suser['username']?>' class="text-decoration-none text-dark"><h6 style="margin: 0px;font-size: small;"><?=$suser['first_name']?> <?=$suser['last_name']?></h6></a>
                             <p style="margin:0px;font-size:small" class="text-muted">@<?=$suser['username']?></p>
                         </div>
                     </div>

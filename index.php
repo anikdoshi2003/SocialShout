@@ -43,6 +43,8 @@ elseif(isset($_SESSION['Auth']) && isset($_GET['u']) && $user['acc_status']==1){
  
     }else{
     $profile_post = getPostById($profile['id']);
+    $profile['followers']= getFollowers($profile['id']);
+    $profile['following']= getFollowing($profile['id']);
         showPage('header',['page_title'=>$profile['first_name'].' '.$profile['last_name'].'- SocialShout']);
         showPage('navbar');
         showPage('profile');
