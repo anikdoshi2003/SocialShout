@@ -9,7 +9,8 @@ if(isset($_GET['newfp'])){
 
 if(isset($_SESSION['Auth'])){
     $user = getUser($_SESSION['userdata']['id']);
-    $posts= getPost();
+    $posts= filterPosts();
+    $follow_sugggestions = filterFollowSuggestion();
 }
 
 $pagecount= count($_GET);
@@ -33,7 +34,21 @@ elseif(isset($_SESSION['Auth'])&& $user['acc_status']==2 && !$pagecount){
     showPage('navbar');
     showPage('edit_profile');
 }
-elseif(isset($_GET['signup'])){
+elseif(isset($_SESSION['Auth']) && isset($_GET['u']) && $user['acc_status']==1){  
+    $profile = getUserByUsername($_GET['u']);
+    if(!$profile){
+        showPage('header',['page_title'=>'SocialShout- User Not Found']);
+        showPage('navbar');
+        showPage('user_not_found');
+ 
+    }else{
+    $profile_post = getPostById($profile['id']);
+        showPage('header',['page_title'=>$profile['first_name'].' '.$profile['last_name'].'- SocialShout']);
+        showPage('navbar');
+        showPage('profile');
+    }
+    
+}elseif(isset($_GET['signup'])){
     showPage('header',['page_title'=>'SocialShout-Signup']);
     showPage('signup');
 }

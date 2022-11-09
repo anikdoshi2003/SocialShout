@@ -25,8 +25,9 @@
 </div>
  
  <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
- <script src="assets/JS/custom.js?v=<?=time()?>"></script>
-
+ <script src="assets/JS/jquery-3.6.1.min.js?>"></script> 
+ <script src="assets/JS/custom.js?v=<?=time()?>"></script> 
+ 
 </body> 
 
 </html>
