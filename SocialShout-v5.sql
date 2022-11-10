@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 10, 2022 at 12:03 AM
+-- Generation Time: Nov 10, 2022 at 02:15 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -20,6 +20,34 @@ SET time_zone = "+00:00";
 --
 -- Database: `socialshout`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `comments`
+--
+
+CREATE TABLE `comments` (
+  `id` int(11) NOT NULL,
+  `post_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `comment` text NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `comments`
+--
+
+INSERT INTO `comments` (`id`, `post_id`, `user_id`, `comment`, `created_at`) VALUES
+(5, 4, 1, 'hi', '2022-11-10 09:21:41'),
+(6, 4, 1, 'test', '2022-11-10 09:37:58'),
+(7, 3, 1, 'hi', '2022-11-10 09:40:18'),
+(9, 1, 1, 'test', '2022-11-10 09:42:36'),
+(10, 6, 1, 'hi', '2022-11-10 09:47:28'),
+(11, 7, 1, 'hi', '2022-11-10 09:49:21'),
+(12, 7, 1, 'hi', '2022-11-10 09:52:09'),
+(13, 7, 1, 'test', '2022-11-10 09:52:45');
 
 -- --------------------------------------------------------
 
@@ -54,6 +82,16 @@ CREATE TABLE `likes` (
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `likes`
+--
+
+INSERT INTO `likes` (`id`, `post_id`, `user_id`) VALUES
+(4, 4, 1),
+(9, 6, 2),
+(10, 4, 2),
+(15, 6, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -77,7 +115,8 @@ INSERT INTO `posts` (`id`, `user_id`, `post_img`, `post_text`, `created_at`) VAL
 (3, 1, '1667636520SocialShout-logo-1.png', '2nd post', '2022-11-05 08:22:00'),
 (4, 1, '1667636802SocialShout-logo-2.jpeg', '', '2022-11-05 08:26:42'),
 (5, 11, '1667988936SocialShout-logo-1.png', '', '2022-11-09 10:15:36'),
-(6, 2, '1667991608post2.jpg', 'hiii', '2022-11-09 11:00:08');
+(6, 2, '1667991608post2.jpg', 'hiii', '2022-11-09 11:00:08'),
+(7, 1, '1668073756post.jpg', 'test', '2022-11-10 09:49:16');
 
 -- --------------------------------------------------------
 
@@ -115,6 +154,12 @@ INSERT INTO `users` (`id`, `first_name`, `last_name`, `gender`, `email`, `userna
 --
 
 --
+-- Indexes for table `comments`
+--
+ALTER TABLE `comments`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `follow_list`
 --
 ALTER TABLE `follow_list`
@@ -143,6 +188,12 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `comments`
+--
+ALTER TABLE `comments`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
 -- AUTO_INCREMENT for table `follow_list`
 --
 ALTER TABLE `follow_list`
@@ -152,13 +203,13 @@ ALTER TABLE `follow_list`
 -- AUTO_INCREMENT for table `likes`
 --
 ALTER TABLE `likes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `users`

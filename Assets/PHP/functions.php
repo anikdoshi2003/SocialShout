@@ -7,7 +7,7 @@ function showPage($page,$data=""){
     include("Assets/Pages/$page.php");
 }
 
-//function for follwoing the user
+//function for following the user
 function followUser($user_id){
     global $db;
     $current_user=$_SESSION['userdata']['id'];
@@ -15,7 +15,61 @@ function followUser($user_id){
     return mysqli_query($db,$query);
 }
 
-//function for unfollwoing the user
+//function checkLikeStatus
+function checkLikeStatus($post_id){
+    global $db;
+    $current_user = $_SESSION['userdata']['id'];
+    $query="SELECT count(*) as row FROM likes WHERE user_id=$current_user && post_id=$post_id";
+    $run = mysqli_query($db,$query);
+    return mysqli_fetch_assoc($run)['row'];
+}
+
+//function for like the post
+function like($post_id){
+    global $db;
+    $current_user=$_SESSION['userdata']['id'];
+    $query="INSERT INTO likes(post_id,user_id) VALUES($post_id,$current_user)";
+
+    return mysqli_query($db,$query);
+}
+
+//function for creating comments
+function addComment($post_id,$comment){
+    global $db;
+ $comment = mysqli_real_escape_string($db,$comment);
+
+    $current_user=$_SESSION['userdata']['id'];
+    $query="INSERT INTO comments(user_id,post_id,comment) VALUES($current_user,$post_id,'$comment')";
+    return mysqli_query($db,$query);
+    
+}
+
+function getComments($post_id){
+    global $db;
+    $query="SELECT * FROM comments WHERE post_id=$post_id ORDER BY id DESC";
+    $run = mysqli_query($db,$query);
+    return mysqli_fetch_all($run,true);
+}
+
+
+//function for getting likes count
+function getLikes($post_id){
+    global $db;
+    $query="SELECT * FROM likes WHERE post_id=$post_id";
+    $run = mysqli_query($db,$query);
+    return mysqli_fetch_all($run,true);
+}
+
+//function for unlike the post
+function unlike($post_id){
+    global $db;
+    $current_user=$_SESSION['userdata']['id'];
+    $query="DELETE FROM likes WHERE user_id=$current_user && post_id=$post_id";
+    
+    return mysqli_query($db,$query);
+}
+
+//function for unfollowing the user
 function unfollowUser($user_id){
     global $db;
     $current_user=$_SESSION['userdata']['id'];
@@ -23,7 +77,6 @@ function unfollowUser($user_id){
 
     return mysqli_query($db,$query);
  
-    
 }
 
 //function for showing errors
