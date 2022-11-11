@@ -7,8 +7,12 @@ function showPage($page,$data=""){
 include("assets/pages/$page.php");
 }
 
+<<<<<<< HEAD
 
 
+//for getting ids of chat users
+function getActiveChatUserIds(){
+=======
 //for getting ids of chat users
 function getActiveChatUserIds(){
     global $db;
@@ -76,6 +80,75 @@ function getAllMessages(){
     return $conversation;
 }
 
+//function for following the user
+function followUser($user_id){
+>>>>>>> ca295611c54fce32ffef43dbc9f85526ac722a21
+    global $db;
+    $current_user_id = $_SESSION['userdata']['id'];
+    $query = "SELECT from_user_id,to_user_id FROM messages WHERE to_user_id=$current_user_id || from_user_id=$current_user_id ORDER BY id DESC";
+    $run = mysqli_query($db,$query);
+    $data =  mysqli_fetch_all($run,true);
+    $ids=array();
+    foreach($data as $ch){
+    if($ch['from_user_id']!=$current_user_id && !in_array($ch['from_user_id'],$ids)){
+       $ids[]=$ch['from_user_id'];
+    }
+
+    if($ch['to_user_id']!=$current_user_id && !in_array($ch['to_user_id'],$ids)){
+        $ids[]=$ch['to_user_id'];
+     }
+
+    }
+
+    return $ids;
+}
+
+function getMessages($user_id){
+    global $db;
+    $current_user_id = $_SESSION['userdata']['id'];
+    $query = "SELECT * FROM messages WHERE (to_user_id=$current_user_id && from_user_id=$user_id) || (from_user_id=$current_user_id && to_user_id=$user_id) ORDER BY id DESC";
+    $run = mysqli_query($db,$query);
+    return  mysqli_fetch_all($run,true);
+}
+
+function sendMessage($user_id,$msg){
+    global $db;
+    $current_user_id = $_SESSION['userdata']['id'];
+    $query = "INSERT INTO messages (from_user_id,to_user_id,msg) VALUES($current_user_id,$user_id,'$msg')";
+    return mysqli_query($db,$query);
+
+}
+
+function newMsgCount(){
+global $db;
+$current_user_id = $_SESSION['userdata']['id'];
+$query="SELECT COUNT(*) as row FROM messages WHERE to_user_id=$current_user_id && read_status=0";
+$run=mysqli_query($db,$query);
+return mysqli_fetch_assoc($run)['row'];
+}
+
+function updateMessageReadStatus($user_id){
+    $cu_user_id = $_SESSION['userdata']['id'];
+    global $db;
+    $query="UPDATE messages SET read_status=1 WHERE to_user_id=$cu_user_id && from_user_id=$user_id";
+    return mysqli_query($db,$query);
+}
+
+<<<<<<< HEAD
+function gettime($date){
+    return date('H:i - (F jS, Y )', strtotime($date));
+}
+
+function getAllMessages(){
+    $active_chat_ids = getActiveChatUserIds();
+    $conversation=array();
+    foreach($active_chat_ids as $index=>$id){
+        $conversation[$index]['user_id'] = $id;
+        $conversation[$index]['messages'] = getMessages($id);
+    }
+    return $conversation;
+}
+
 //function for follow the user
 function followUser($user_id){
     global $db;
@@ -117,6 +190,8 @@ function unblockUser($user_id){
     return mysqli_query($db,$query);   
 }
 
+=======
+>>>>>>> ca295611c54fce32ffef43dbc9f85526ac722a21
 //function checkLikeStatus
 function checkLikeStatus($post_id){
     global $db;
@@ -131,6 +206,7 @@ function like($post_id){
     global $db;
     $current_user=$_SESSION['userdata']['id'];
     $query="INSERT INTO likes(post_id,user_id) VALUES($post_id,$current_user)";
+<<<<<<< HEAD
    $poster_id = getPosterId($post_id);
    
    if($poster_id!=$current_user){
@@ -145,6 +221,12 @@ function like($post_id){
 
 
 
+=======
+
+    return mysqli_query($db,$query);
+}
+
+>>>>>>> ca295611c54fce32ffef43dbc9f85526ac722a21
 //function for creating comments
 function addComment($post_id,$comment){
     global $db;
@@ -152,6 +234,7 @@ function addComment($post_id,$comment){
 
     $current_user=$_SESSION['userdata']['id'];
     $query="INSERT INTO comments(user_id,post_id,comment) VALUES($current_user,$post_id,'$comment')";
+<<<<<<< HEAD
     $poster_id = getPosterId($post_id);
 
     if($poster_id!=$current_user){
@@ -159,10 +242,13 @@ function addComment($post_id,$comment){
     }
    
 
+=======
+>>>>>>> ca295611c54fce32ffef43dbc9f85526ac722a21
     return mysqli_query($db,$query);
     
 }
 
+<<<<<<< HEAD
 
 //function for creating comments
 function createNotification($from_user_id,$to_user_id,$msg,$post_id=0){
@@ -174,6 +260,8 @@ function createNotification($from_user_id,$to_user_id,$msg,$post_id=0){
 
 
 //function for getting likes count
+=======
+>>>>>>> ca295611c54fce32ffef43dbc9f85526ac722a21
 function getComments($post_id){
     global $db;
     $query="SELECT * FROM comments WHERE post_id=$post_id ORDER BY id DESC";
@@ -184,6 +272,7 @@ function getComments($post_id){
 //get notifications
 
 function getNotifications(){
+<<<<<<< HEAD
   $cu_user_id = $_SESSION['userdata']['id'];
 
     global $db;
@@ -214,6 +303,35 @@ function getUnreadNotificationsCount(){
       return mysqli_query($db,$query);
   }
 
+=======
+    $cu_user_id = $_SESSION['userdata']['id'];
+  
+      global $db;
+      $query="SELECT * FROM notifications WHERE to_user_id=$cu_user_id ORDER BY id DESC";
+      $run = mysqli_query($db,$query);
+      return mysqli_fetch_all($run,true);
+  }
+  
+  function getUnreadNotificationsCount(){
+      $cu_user_id = $_SESSION['userdata']['id'];
+    
+        global $db;
+        $query="SELECT count(*) as row FROM notifications WHERE to_user_id=$cu_user_id && read_status=0 ORDER BY id DESC";
+        $run = mysqli_query($db,$query);
+        return mysqli_fetch_assoc($run)['row'];
+    }
+  
+    function show_time($time){
+      return '<time style="font-size:small" class="timeago text-muted text-small" datetime="'.$time.'"></time>';
+    }
+  
+    function setNotificationStatusAsRead(){
+         $cu_user_id = $_SESSION['userdata']['id'];
+        global $db;
+        $query="UPDATE notifications SET read_status=1 WHERE to_user_id=$cu_user_id";
+        return mysqli_query($db,$query);
+    }
+>>>>>>> ca295611c54fce32ffef43dbc9f85526ac722a21
 
 
 //function for getting likes count
@@ -230,6 +348,7 @@ function unlike($post_id){
     $current_user=$_SESSION['userdata']['id'];
     $query="DELETE FROM likes WHERE user_id=$current_user && post_id=$post_id";
     
+<<<<<<< HEAD
     $poster_id = getPosterId($post_id);
     if($poster_id!=$current_user){
         createNotification($current_user,$poster_id,"unliked your post !",$post_id);
@@ -237,6 +356,12 @@ function unlike($post_id){
   
     return mysqli_query($db,$query);
 }
+=======
+    return mysqli_query($db,$query);
+}
+
+//function for unfollowing the user
+>>>>>>> ca295611c54fce32ffef43dbc9f85526ac722a21
 function unfollowUser($user_id){
     global $db;
     $current_user=$_SESSION['userdata']['id'];
@@ -245,7 +370,6 @@ function unfollowUser($user_id){
     createNotification($current_user,$user_id,"Unfollowed you !");
     return mysqli_query($db,$query);
  
-    
 }
 
 

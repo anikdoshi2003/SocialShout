@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+<<<<<<< HEAD
 -- Generation Time: Nov 11, 2022 at 06:48 AM
+=======
+-- Generation Time: Nov 10, 2022 at 07:28 PM
+>>>>>>> ca295611c54fce32ffef43dbc9f85526ac722a21
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -24,6 +28,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+<<<<<<< HEAD
 -- Table structure for table `block_list`
 --
 
@@ -36,6 +41,8 @@ CREATE TABLE `block_list` (
 -- --------------------------------------------------------
 
 --
+=======
+>>>>>>> ca295611c54fce32ffef43dbc9f85526ac722a21
 -- Table structure for table `comments`
 --
 
@@ -127,9 +134,14 @@ CREATE TABLE `messages` (
 INSERT INTO `messages` (`id`, `from_user_id`, `to_user_id`, `msg`, `read_status`, `created_at`) VALUES
 (1, 1, 2, 'hi test', 0, '2022-11-10 14:39:40'),
 (2, 4, 1, 'test', 1, '2022-11-10 14:46:32'),
+<<<<<<< HEAD
 (3, 3, 1, 'test', 1, '2022-11-10 14:46:49'),
 (4, 2, 1, 'hi', 1, '2022-11-10 16:27:20'),
 (5, 1, 2, 'hi', 0, '2022-11-11 05:48:15');
+=======
+(3, 3, 1, 'test', 0, '2022-11-10 14:46:49'),
+(4, 2, 1, 'hi', 0, '2022-11-10 16:27:20');
+>>>>>>> ca295611c54fce32ffef43dbc9f85526ac722a21
 
 -- --------------------------------------------------------
 
@@ -199,24 +211,34 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `gender`, `email`, `username`, `password`, `profile_pic`, `created_at`, `updated_at`, `acc_status`) VALUES
 (1, 'Anik', 'Doshi', 1, 'anikdoshi2003@gmail.com', 'anik2003', 'cc03e747a6afbbcbf8be7668acfebee5', '1667636220ANIKDOSHI1809PHOTO.jpg', '2022-11-01 15:14:46', '2022-11-09 10:14:49', 1),
+<<<<<<< HEAD
 (2, 'Raj', 'Shah', 1, 'anikdoshi3@gmail.com', 'raj123', 'cc03e747a6afbbcbf8be7668acfebee5', 'default_profile.jpg', '2022-11-02 13:04:46', '2022-11-11 05:23:07', 1),
 (3, 'te', 'test', 1, 'test3@socialshout.com', 'test3', 'cc03e747a6afbbcbf8be7668acfebee5', 'default_profile.jpg', '2022-11-09 10:19:18', '2022-11-11 05:23:36', 1),
 (4, 'test4', 'test', 2, 'test4@socialshout.com', 'test4', 'cc03e747a6afbbcbf8be7668acfebee5', 'default_profile.jpg', '2022-11-09 10:19:43', '2022-11-09 10:35:00', 1),
 (5, 'test6', 'test', 0, 'test6@socialshout.com', 'test6', '16d7a4fca7442dda3ad93c9a726597e4', 'default_profile.jpg', '2022-11-09 10:34:19', '2022-11-11 05:23:14', 1),
 (17, 'test7', 'test', 1, 'test7@socialshout.com', 'test7.socialshout', 'cc03e747a6afbbcbf8be7668acfebee5', 'default_profile.jpg', '2022-11-10 19:15:41', NULL, 0),
 (18, 'test8', 'test8', 1, 'anik.doshi@somaiya.edu', 'test8.socialshout', 'cc03e747a6afbbcbf8be7668acfebee5', 'default_profile.jpg', '2022-11-10 19:16:46', '2022-11-10 19:17:45', 1);
+=======
+(2, 'test2', 'test', 1, 'anikdoshi3@gmail.com', 'test2', 'cc03e747a6afbbcbf8be7668acfebee5', 'default_profile.jpg', '2022-11-02 13:04:46', '2022-11-09 10:33:07', 1),
+(3, 'test3', 'test', 1, 'test3@socialshout.com', 'test3', 'cc03e747a6afbbcbf8be7668acfebee5', 'default_profile.jpg', '2022-11-09 10:19:18', '2022-11-09 10:34:58', 1),
+(4, 'test4', 'test', 2, 'test4@socialshout.com', 'test4', 'cc03e747a6afbbcbf8be7668acfebee5', 'default_profile.jpg', '2022-11-09 10:19:43', '2022-11-09 10:35:00', 1),
+(5, 'test6', 'test', 0, 'test6@socialshout.com', 'test6', '16d7a4fca7442dda3ad93c9a726597e4', 'default_profile.jpg', '2022-11-09 10:34:19', '2022-11-09 10:34:45', 0);
+>>>>>>> ca295611c54fce32ffef43dbc9f85526ac722a21
 
 --
 -- Indexes for dumped tables
 --
 
 --
+<<<<<<< HEAD
 -- Indexes for table `block_list`
 --
 ALTER TABLE `block_list`
   ADD PRIMARY KEY (`id`);
 
 --
+=======
+>>>>>>> ca295611c54fce32ffef43dbc9f85526ac722a21
 -- Indexes for table `comments`
 --
 ALTER TABLE `comments`
@@ -263,12 +285,15 @@ ALTER TABLE `users`
 --
 
 --
+<<<<<<< HEAD
 -- AUTO_INCREMENT for table `block_list`
 --
 ALTER TABLE `block_list`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+=======
+>>>>>>> ca295611c54fce32ffef43dbc9f85526ac722a21
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
@@ -290,7 +315,11 @@ ALTER TABLE `likes`
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
+<<<<<<< HEAD
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+=======
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+>>>>>>> ca295611c54fce32ffef43dbc9f85526ac722a21
 
 --
 -- AUTO_INCREMENT for table `notifications`
@@ -308,7 +337,11 @@ ALTER TABLE `posts`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
+<<<<<<< HEAD
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+=======
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+>>>>>>> ca295611c54fce32ffef43dbc9f85526ac722a21
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
