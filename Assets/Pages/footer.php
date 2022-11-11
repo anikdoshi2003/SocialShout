@@ -66,22 +66,14 @@
 
 
 
-<<<<<<< HEAD
 <?php 
 }
  ?>
-=======
-<?php } ?>
->>>>>>> ca295611c54fce32ffef43dbc9f85526ac722a21
 <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="assets/JS/jquery-3.6.1.min.js?>"></script>
 <script src="assets/js/jquery.timeago.js"></script>
 
-<<<<<<< HEAD
 <script src="assets/JS/custom.js?v=<?= time()?>"></script>
-=======
-<script src="assets/JS/custom.js?v=<?= time() ?>"></script>
->>>>>>> ca295611c54fce32ffef43dbc9f85526ac722a21
 
 </body>
 

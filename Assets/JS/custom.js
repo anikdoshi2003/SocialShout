@@ -156,11 +156,6 @@ $(".add-comment").click(function () {
                 $(button).siblings('.comment-input').val('');
                 $("#"+cs).append(response.comment);
 
-<<<<<<< HEAD
-=======
-              
-                // $('#likecount' + post_id_v).text($('#likecount' + post_id_v).text() - 1);
->>>>>>> ca295611c54fce32ffef43dbc9f85526ac722a21
                 $( '.nce').hide(); 
                 if(page='wall'){
                     location.reload();
@@ -192,11 +187,7 @@ function popchat(user_id) {
     $("#chatter_username").text('loading..');
     $("#chatter_name").text('');
     $("#chatter_pic").attr('src', 'assets/images/profile/default_profile.jpg');
-<<<<<<< HEAD
     chatting_user_id = user_id;
-=======
-    chatting_user_id = user_id; 
->>>>>>> ca295611c54fce32ffef43dbc9f85526ac722a21
     $("#sendmsg").attr('data-user-id', user_id);
 }
 
