@@ -587,7 +587,7 @@ function createUser($data){
 //function for verify email
 function verifyEmail($email){
     global $db;
-    $query="UPDATE users SET ac_status=1 WHERE email='$email'";
+    $query="UPDATE users SET acc_status=1 WHERE email='$email'";
     return mysqli_query($db,$query);
 }
 

@@ -30,7 +30,7 @@
 
                 <a class="nav-link text-dark" data-bs-toggle="modal" data-bs-target="#addpost" href="#"><i class="bi bi-plus-square-fill"></i></a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
 
 
                 <?php
@@ -52,7 +52,7 @@
                 ?>
 
 
-            </li>
+            </li> -->
             <li class="nav-item">
                 <a class="nav-link text-dark" data-bs-toggle="offcanvas" href="#message_sidebar"><i class="bi bi-chat-right-dots-fill"></i> <span class="un-count position-absolute start-10 translate-middle badge p-1 rounded-pill bg-danger" id="msgcounter">
 
