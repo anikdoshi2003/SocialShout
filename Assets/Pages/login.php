@@ -1,10 +1,10 @@
 
 <div class="login">
         <div class="col-4 bg-white border rounded p-4 shadow-sm">
-            <form action="Assets/php/actions.php?login" method="post">
+            <form action="Assets/PHP/actions.php?login" method="post">
                 <div class="d-flex justify-content-center">
 
-                    <img class="mb-4" src="Assets/images/SocialShout-logo-3.png" alt="" height="100">
+                    <img class="mb-4" src="Assets/Images/SocialShout-logo-3.png" alt="" height="100">
                 </div>
                 <h1 class="h5 mb-3 fw-normal">Please Sign In</h1>
  

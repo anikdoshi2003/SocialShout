@@ -19,13 +19,13 @@
                  <div class="card-title d-flex justify-content-between  align-items-center">
 
                      <div class="d-flex align-items-center p-2">
-                         <img src="assets/images/profile/<?= $post['profile_pic'] ?>" alt="" height="30" class="rounded-circle border">&nbsp;&nbsp;<a href='?u=<?= $post['username'] ?>' class="text-decoration-none text-dark"><?= $post['first_name'] ?> <?= $post['last_name'] ?></a>
+                         <img src="Assets/Images/profile/<?= $post['profile_pic'] ?>" alt="" height="30" class="rounded-circle border">&nbsp;&nbsp;<a href='?u=<?= $post['username'] ?>' class="text-decoration-none text-dark"><?= $post['first_name'] ?> <?= $post['last_name'] ?></a>
                      </div>
                      <div class="p-2">
                          <i class="bi bi-three-dots-vertical"></i>
                      </div>
                  </div>
-                 <img src="assets/images/posts/<?= $post['post_img'] ?>" class="" alt="...">
+                 <img src="Assets/Images/posts/<?= $post['post_img'] ?>" class="" alt="...">
                  <h4 style="font-size: x-larger" class="p-2 border-bottom">
                      <span>
                          <?php
@@ -68,12 +68,12 @@
 
                         <div class="modal-body d-flex p-0">
                             <div class="col-8">
-                                <img src="assets/images/posts/<?= $post['post_img'] ?>" class="w-100 rounded-start">
+                                <img src="Assets/images/posts/<?= $post['post_img'] ?>" class="w-100 rounded-start">
                             </div>
 
                             <div class="col-4 d-flex flex-column">
                                 <div class="d-flex align-items-center p-2 border-bottom">
-                                    <div><img src="assets/images/profile/<?= $post['profile_pic'] ?>" alt="" height="50" class="rounded-circle border">
+                                    <div><img src="Assets/images/profile/<?= $post['profile_pic'] ?>" alt="" height="50" class="rounded-circle border">
                                     </div>
                                     <div>&nbsp;&nbsp;&nbsp;</div>
                                     <div class="d-flex flex-column justify-content-start align-items-center">
@@ -94,7 +94,7 @@
                                         $cuser = getUser($comment['user_id']);
                                     ?>
                                         <div class="d-flex align-items-center p-2">
-                                            <div><img src="assets/images/profile/<?= $cuser['profile_pic'] ?>" alt="" height="40" class="rounded-circle border">
+                                            <div><img src="Assets/Images/profile/<?= $cuser['profile_pic'] ?>" alt="" height="40" class="rounded-circle border">
                                             </div>
                                             <div>&nbsp;&nbsp;&nbsp;</div>
                                             <div class="d-flex flex-column justify-content-start align-items-start">
@@ -148,7 +148,7 @@
                                 ?>
                                  <div class="d-flex justify-content-between">
                                      <div class="d-flex align-items-center p-2">
-                                         <div><img src="assets/images/profile/<?= $fuser['profile_pic'] ?>" alt="" height="40" class="rounded-circle border">
+                                         <div><img src="Assets/images/profile/<?= $fuser['profile_pic'] ?>" alt="" height="40" class="rounded-circle border">
                                          </div>
                                          <div>&nbsp;&nbsp;</div>
                                          <div class="d-flex flex-column justify-content-center">
@@ -178,7 +178,7 @@
 
      <div class="col-4 mt-4 p-3">
          <div class="d-flex align-items-center p-2">
-             <div><img src="assets/images/profile/<?= $user['profile_pic'] ?>" alt="" height="60" class="rounded-circle border">
+             <div><img src="Assets/images/profile/<?= $user['profile_pic'] ?>" alt="" height="60" class="rounded-circle border">
              </div>
              <div>&nbsp;&nbsp;&nbsp;</div>
              <div class="d-flex flex-column justify-content-center align-items-center">
@@ -195,7 +195,7 @@
                 ?>
                  <div class="d-flex justify-content-between">
                      <div class="d-flex align-items-center p-2">
-                         <div><img src="assets/images/profile/<?= $suser['profile_pic'] ?>" alt="" height="40" class="rounded-circle border">
+                         <div><img src="Assets/images/profile/<?= $suser['profile_pic'] ?>" alt="" height="40" class="rounded-circle border">
                          </div>
                          <div>&nbsp;&nbsp;</div>
                          <div class="d-flex flex-column justify-content-center">

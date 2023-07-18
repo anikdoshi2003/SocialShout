@@ -9,7 +9,7 @@ if (isset($_SESSION['forgot_code']) && !isset($_SESSION['auth_temp'])) {
     $action = 'forgotpassword';
 }
 ?>
-           <form method="post" action="assets/php/actions.php?<?=$action?>">
+           <form method="post" action="Assets/PHP/actions.php?<?=$action?>">
                 <div class="d-flex justify-content-center">
 
                  </div>

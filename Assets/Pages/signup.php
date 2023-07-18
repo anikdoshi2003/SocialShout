@@ -3,7 +3,7 @@
             <form action="Assets/PHP/actions.php?signup" method="post">
                 <div class="d-flex justify-content-center">
 
-                    <img class="mb-4" src="assets/images/SocialShout-logo-3.png" alt="" height="100">
+                    <img class="mb-4" src="Assets/Images/SocialShout-logo-3.png" alt="" height="100">
                 </div>
                 <h1 class="h5 mb-3 fw-normal">Create new account</h1>
                 <div class="d-flex">

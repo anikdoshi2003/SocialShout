@@ -8,7 +8,7 @@
                 </div>
                 <div class="modal-body">
                     <img src="" style="display:none" id="post_img" class="w-100 rounded border">
-                    <form method="post" action="assets/php/actions.php?addpost" enctype="multipart/form-data">
+                    <form method="post" action="Assets/PHP/actions.php?addpost" enctype="multipart/form-data">
                         <div class="my-3">
                             <input class="form-control" name="post_img" type="file" id="select_post_img">
                         </div>
@@ -41,7 +41,7 @@
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
-        <a href="" id="cplink" class="text-decoration-none text-dark"><h5 class="modal-title" id="exampleModalLabel"><img src="assets/images/profile/default_profile.jpg" id="chatter_pic" height="40" width="40" class="m-1 rounded-circle border"><span id="chatter_name"></span>(@<span id="chatter_username">loading..</span>)</h5></a>
+        <a href="" id="cplink" class="text-decoration-none text-dark"><h5 class="modal-title" id="exampleModalLabel"><img src="Assets/images/profile/default_profile.jpg" id="chatter_pic" height="40" width="40" class="m-1 rounded-circle border"><span id="chatter_name"></span>(@<span id="chatter_username">loading..</span>)</h5></a>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body d-flex flex-column-reverse gap-2" id="user_chat">
@@ -69,11 +69,11 @@
 <?php 
 }
  ?>
-<script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="assets/JS/jquery-3.6.1.min.js?>"></script>
-<script src="assets/js/jquery.timeago.js"></script>
+<script src="Assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="Assets/JS/jquery-3.6.1.min.js?>"></script>
+<script src="Assets/JS/jquery.timeago.js"></script>
 
-<script src="assets/JS/custom.js?v=<?= time()?>"></script>
+<script src="Assets/JS/custom.js?v=<?= time()?>"></script>
 
 </body>
 

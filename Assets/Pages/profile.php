@@ -6,7 +6,7 @@ global $user;
 
 <div class="container col-9 rounded-0">
     <div class="col-12 rounded p-4 mt-4 d-flex gap-5">
-        <div class="col-4 d-flex justify-content-end align-items-start"><img src="assets/images/profile/<?= $profile['profile_pic'] ?>" ; class="img-thumbnail rounded-circle my-3" style="height:170px;" alt="...">
+        <div class="col-4 d-flex justify-content-end align-items-start"><img src="Assets/Images/profile/<?= $profile['profile_pic'] ?>" ; class="img-thumbnail rounded-circle my-3" style="height:170px;" alt="...">
         </div>
         <div class="col-8">
             <div class="d-flex flex-column">
@@ -75,7 +75,7 @@ global $user;
         <?php
         foreach ($profile_post as $post) {
         ?>
-            <img src="assets/images/posts/<?= $post['post_img'] ?>" data-bs-toggle="modal" data-bs-target="#postview<?= $post['id'] ?>" width="250px" class="rounded" />
+            <img src="Assets/Images/posts/<?= $post['post_img'] ?>" data-bs-toggle="modal" data-bs-target="#postview<?= $post['id'] ?>" width="250px" class="rounded" />
 
             <div class="modal fade" id="postview<?= $post['id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-xl modal-dialog-centered">
@@ -83,12 +83,12 @@ global $user;
 
                         <div class="modal-body d-flex p-0">
                             <div class="col-8">
-                                <img src="assets/images/posts/<?= $post['post_img'] ?>" class="w-100 rounded-start">
+                                <img src="Assets/Images/posts/<?= $post['post_img'] ?>" class="w-100 rounded-start">
                             </div>
 
                             <div class="col-4 d-flex flex-column">
                                 <div class="d-flex align-items-center p-2 border-bottom">
-                                    <div><img src="assets/images/profile/<?= $profile['profile_pic'] ?>" alt="" height="50" class="rounded-circle border">
+                                    <div><img src="Assets/Images/profile/<?= $profile['profile_pic'] ?>" alt="" height="50" class="rounded-circle border">
                                     </div>
                                     <div>&nbsp;&nbsp;&nbsp;</div>
                                     <div class="d-flex flex-column justify-content-start align-items-center">
@@ -110,7 +110,7 @@ global $user;
                                         $cuser = getUser($comment['user_id']);
                                     ?>
                                         <div class="d-flex align-items-center p-2">
-                                            <div><img src="assets/images/profile/<?= $cuser['profile_pic'] ?>" alt="" height="40" class="rounded-circle border">
+                                            <div><img src="Assets/Images/profile/<?= $cuser['profile_pic'] ?>" alt="" height="40" class="rounded-circle border">
                                             </div>
                                             <div>&nbsp;&nbsp;&nbsp;</div>
                                             <div class="d-flex flex-column justify-content-start align-items-start">
@@ -170,7 +170,7 @@ global $user;
                 ?>
                     <div class="d-flex justify-content-between">
                         <div class="d-flex align-items-center p-2">
-                            <div><img src="assets/images/profile/<?= $fuser['profile_pic'] ?>" alt="" height="40" class="rounded-circle border">
+                            <div><img src="Assets/Images/profile/<?= $fuser['profile_pic'] ?>" alt="" height="40" class="rounded-circle border">
                             </div>
                             <div>&nbsp;&nbsp;</div>
                             <div class="d-flex flex-column justify-content-center">
@@ -217,7 +217,7 @@ global $user;
                 ?>
                     <div class="d-flex justify-content-between">
                         <div class="d-flex align-items-center p-2">
-                            <div><img src="assets/images/profile/<?= $fuser['profile_pic'] ?>" alt="" height="40" class="rounded-circle border">
+                            <div><img src="Assets/Images/profile/<?= $fuser['profile_pic'] ?>" alt="" height="40" class="rounded-circle border">
                             </div>
                             <div>&nbsp;&nbsp;</div>
                             <div class="d-flex flex-column justify-content-center">

@@ -6,7 +6,7 @@ global $user;
             <form>
                 <div class="d-flex justify-content-center">
 
-                    <img class="mb-4" src="assets/images/SocialShout-logo-3.png" alt="" height="45">
+                    <img class="mb-4" src="Assets/Images/SocialShout-logo-3.png" alt="" height="45">
                 </div>
                 <h1 class="h5 mb-3 fw-normal">Hello, <?= $user['first_name'].' '.$user['last_name'].' ('.$user['email'].')'?> Your Account Is Blocked By Admin</h1>
 
