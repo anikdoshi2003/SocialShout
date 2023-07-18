@@ -56,5 +56,5 @@ jobs:
         with:
           app-name: 'SocialShout'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_157A83885E1C44C9B68E8A9B99D135AF }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D9DD837F7629474B88F521C7378BC194 }}
           package: .
