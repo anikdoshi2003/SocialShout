@@ -1,3 +1,4 @@
+![image](https://github.com/anikdoshi2003/SocialShout/assets/25004062/8968abbe-da49-425e-96d8-20695ae25c00)
 # SocialShout
 
 Requirements
