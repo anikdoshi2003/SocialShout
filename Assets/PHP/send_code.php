@@ -17,10 +17,10 @@ function sendCode($email,$subject,$code){
         //Server
         $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
         $mail->isSMTP();                                            //Send using SMTP
-        $mail->Host       = '<email smtp server>';                     //Set the SMTP server to send through
+        $mail->Host       = 'smtp-relay.brevo.com';                     //Set the SMTP server to send through
         $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-        $mail->Username   = '<email id>';                     //SMTP username
-        $mail->Password   = '<password>';                               //SMTP password
+        $mail->Username   = 'socialshoutemailservice@gmail.com';                     //SMTP username
+        $mail->Password   = 'vcFK6LdNqbyf79pH';                               //SMTP password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;            //Enable implicit TLS encryption
         $mail->Port       = 587;                                //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
     
